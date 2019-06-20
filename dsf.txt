@@ -1,0 +1,343 @@
+package stepDefinition;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+import io.cucumber.datatable.DataTable;
+
+public class Favourites {
+	
+	private static WebDriver driver;
+
+
+	@Given("^Open firefox and start application$")
+	public void open_firefox_and_start_application() throws Throwable {
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\jothi\\Downloads\\geckodriver-v0.23.0-win32\\geckodriver.exe");
+		driver = new FirefoxDriver();
+	    driver.manage().window().maximize();
+		driver.get("http://106.51.2.179:1010/aampcbcs/login.do");
+	}
+
+	@When("^I enter valid \"(.*?)\" and valid \"(.*?)\"$")
+	public void i_enter_valid_and_valid(String username, String password) throws Throwable {
+		driver.findElement(By.xpath("//*[@id=\"j_username\"]")).sendKeys(username);
+		 driver.findElement(By.xpath("//*[@id=\"j_password\"]")).sendKeys(password);
+		 driver.findElement(By.xpath("//*[@id=\"btn-login\"]")).click();
+	}
+	
+	@When("^Click into the Report$")
+	public void click_into_the_Report() throws Throwable {
+	    driver.findElement(By.xpath("/html/body/div/nav/div[2]/div/div/ul[2]/div/div[1]/ul/li[2]/a")).click();
+	}
+	@Then("^Select in to the \"(.*?)\"$")
+	public void select_in_to_the(String ReportName) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.xpath("//*[@id=\"reportName\"]")).sendKeys(ReportName);
+	}
+
+	@Then("^Select \"(.*?)\"$")
+	public void select(String Batch) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.xpath("//*[@id=\"studentBatch1\"]")).sendKeys(Batch);
+	}
+
+	@Then("^Select to \"(.*?)\"$")
+	public void select_to(String Program) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.xpath("//*[@id=\"sltProgram\"]")).sendKeys(Program);
+	}
+
+	@Then("^Selected \"(.*?)\"$")
+	public void selected(String Semester) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.xpath("//*[@id=\"sltSemester\"]")).sendKeys(Semester);
+	}
+
+	@Then("^I Select into the \"(.*?)\"$")
+	public void i_Select_into_the(String Course) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.xpath("//*[@id=\"sltCourse\"]")).sendKeys(Course);
+	}
+	@Then("^Click to View$")
+	public void click_to_View() throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[1]/div[7]/div/button")).click();
+	}
+
+
+
+	/*@Then("^Select in to the \"(.*?)\"$")
+	public void select_in_to_the(String ReportName) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.xpath("//*[@id=\"reportName\"]")).sendKeys(ReportName);
+	}
+
+	@Then("^Select \"(.*?)\"$")
+	public void select(String Batch) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.xpath("//*[@id=\"studentBatch1\"]")).sendKeys(Batch);
+	}
+
+	@Then("^Select to \"(.*?)\"$")
+	public void select_to(String Program) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.xpath("//*[@id=\"sltProgram\"]")).sendKeys(Program);
+	}
+
+	@Then("^Selected \"(.*?)\"$")
+	public void selected(String Semester) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.xpath("//*[@id=\"sltSemester\"]")).sendKeys(Semester);
+	}
+
+	@Then("^Select into the \"(.*?)\"$")
+	public void select_into_the(String Course) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+	    // E,K,V must be a scalar (String, Integer, Date, enum etc)
+		driver.findElement(By.xpath("//*[@id=\"sltCourse\"]")).sendKeys(Course);
+	}*/
+
+
+	/*@Then("^Select in to the ReportName$")
+	public void select_in_to_the_ReportName() throws Throwable {
+	    driver.findElement(By.xpath("/html/body/div/div[2]/div/div/div/div[1]/div[1]/div[1]/select/option[4]")).click();
+	}*/
+	/*@Then("^Select in to the \"(.*?)\" and \"(.*?)\" and \"(.*?)\" and \"(.*?)\" and \"(.*?)\"$")
+	public void select_in_to_the_and_and_and_and(String ReportName, String Batch, String Program, String Semester, String Course, DataTable arg6) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+	    // E,K,V must be a scalar (String, Integer, Date, enum etc)
+	    driver.findElement(By.xpath("//*[@id=\"reportName\"]")).sendKeys(ReportName);
+	    driver.findElement(By.xpath("//*[@id=\"studentBatch1\"]")).sendKeys(Batch);
+	    driver.findElement(By.xpath("//*[@id=\"sltProgram\"]")).sendKeys(Program);
+	    driver.findElement(By.xpath("//*[@id=\"sltSemester\"]")).sendKeys(Semester);
+	    driver.findElement(By.xpath("//*[@id=\"sltCourse\"]")).sendKeys(Course);
+	}*/
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*package stepDefinition;
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import cucumber.api.DataTable;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
+//import io.cucumber.datatable.DataTable;
+
+public class Favourites {
+	
+	private static WebDriver driver;
+	
+	
+	@Given("^Open firefox and start application$")
+	public void open_firefox_and_start_application() throws Throwable {
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\jothi\\Downloads\\geckodriver-v0.23.0-win32\\geckodriver.exe");
+		driver = new FirefoxDriver();
+	    driver.manage().window().maximize();
+		driver.get("http://106.51.2.179:1010/aampcbcs/login.do");
+	}
+
+	@When("^I enter valid \"(.*?)\" and valid \"(.*?)\"$")
+	public void i_enter_valid_and_valid(String username, String password, DataTable arg3) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+	    // E,K,V must be a scalar (String, Integer, Date, enum etc)
+		driver.findElement(By.xpath("//*[@id=\"j_username\"]")).sendKeys(username);
+		 driver.findElement(By.xpath("//*[@id=\"j_password\"]")).sendKeys(password);
+		 driver.findElement(By.xpath("//*[@id=\"btn-login\"]")).click();
+		
+		 try
+	        {
+		WebElement ReportText = 	driver.findElement(By.xpath("//*[@id=\"leftReports\"]/a"));
+	        String text = ReportText.getText();
+	        ReportText.click();
+	        if(text.equals("Primary"))
+	       {
+		System.out.println("----------Sucessfuln -------\n-----------------------");
+	       }else
+	       {
+		System.out.println("----------Loginure ----------\n-----------------------");
+		}
+	       }
+	     catch(Throwable e)
+	        {
+		 System.out.println("Inbox not found: "+e.getMessage());
+	        }
+	}
+	@When("^Click into the Reports$")
+	public void click_into_the_Reports() throws Throwable {
+		 driver.findElement(By.xpath("/html/body/div/nav/div[2]/div/div/ul[2]/div/div[1]/ul/li[2]/a")).click();
+	}
+
+	
+
+	@Then("^select valid \"(.*?)\"$")
+	public void select_valid(String ReportName) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.xpath("//*[@id=\"reportName\"]/option[1]")).sendKeys(ReportName);
+	}
+
+	@Then("^select in valid \"(.*?)\"$")
+	public void select_in_valid(String Batch) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.xpath("//*[@id=\"studentBatch1\"]/option[4]")).sendKeys(Batch);
+	}
+
+	@Then("^select into valid \"(.*?)\"$")
+	public void select_into_valid(String Program) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.xpath("//*[@id=\"sltProgram\"]/option[2]")).sendKeys(Program);
+	}
+
+	@Then("^select into the valid \"(.*?)\"$")
+	public void select_into_the_valid(String Semester) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		 driver.findElement(By.xpath("//*[@id=\"sltSemester\"]/option[9]")).sendKeys(Semester);
+	}
+
+	@Then("^select the valid \"(.*?)\"$")
+	public void select_the_valid(String Course) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+		driver.findElement(By.xpath("//*[@id=\"sltCourse\"]/option[2]")).sendKeys(Course);
+	}
+
+	@Then("^Verify Status$")
+	public void verify_Status(DataTable arg1) throws Throwable {
+	    // Write code here that turns the phrase above into concrete actions
+	    // For automatic transformation, change DataTable to one of
+	    // List<YourType>, List<List<E>>, List<Map<K,V>> or Map<K,V>.
+	    // E,K,V must be a scalar (String, Integer, Date, enum etc)
+		driver.findElement(By.xpath("//*[@id=\"ReportController\"]/div[1]/div[7]/div/button")).click();
+	}
+
+
+	
+	
+	
+	
+	@Given("^Open firefox and start application$")
+	public void open_firefox_and_start_application() throws Throwable {
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\jothi\\Downloads\\geckodriver-v0.23.0-win32\\geckodriver.exe");
+		driver = new FirefoxDriver();
+	    driver.manage().window().maximize();
+		driver.get("http://106.51.2.179:1010/aampcbcs/login.do");
+	}
+	
+
+	@When("^I enter valid \"(.*?)\" and valid \"(.*?)\"$")
+	public void i_enter_valid_and_valid(String username, String password) throws Throwable {
+		driver.findElement(By.xpath("//*[@id=\"j_username\"]")).sendKeys(username);
+		 driver.findElement(By.xpath("//*[@id=\"j_password\"]")).sendKeys(password);
+		 driver.findElement(By.xpath("//*[@id=\"btn-login\"]")).click();
+		 try
+	        {
+		WebElement ReportText = 	driver.findElement(By.xpath("//*[@id=\"leftReports\"]/a"));
+	        String text = ReportText.getText();
+	        ReportText.click();
+	        if(text.equals("Primary"))
+	       {
+		System.out.println("----------Sucessfuln -------\n-----------------------");
+	       }else
+	       {
+		System.out.println("----------Loginure ----------\n-----------------------");
+		}
+	       }
+	     catch(Throwable e)
+	        {
+		 System.out.println("Inbox not found: "+e.getMessage());
+	        }
+	}
+
+	
+	@Then("^select valid \"(.*?)\"$")
+	public void select_valid(String ReportName) throws Throwable {
+	   driver.findElement(By.xpath("//*[@id=\"reportName\"]/option[1]")).sendKeys(ReportName);
+	}
+
+	@Then("^select in valid \"(.*?)\"$")
+	public void select_in_valid(String Batch) throws Throwable {
+	   driver.findElement(By.xpath("//*[@id=\"studentBatch1\"]/option[4]")).sendKeys(Batch);
+	}
+
+	@Then("^select into valid \"(.*?)\"$")
+	public void select_into_valid(String Program) throws Throwable {
+	    driver.findElement(By.xpath("//*[@id=\"sltProgram\"]/option[2]")).sendKeys(Program);
+	}
+
+	@Then("^select into the valid \"(.*?)\"$")
+	public void select_into_the_valid(String Semester) throws Throwable {
+	   driver.findElement(By.xpath("//*[@id=\"sltSemester\"]/option[9]")).sendKeys(Semester);
+	}
+
+	@Then("^select the valid \"(.*?)\"$")
+	public void select_the_valid(String Course) throws Throwable {
+	    driver.findElement(By.xpath("//*[@id=\"sltCourse\"]/option[2]")).sendKeys(Course);
+	}
+
+	@Then("^Verify Status$")
+	public void verify_Status() throws Throwable {
+	   driver.findElement(By.xpath("//*[@id=\"ReportController\"]/div[1]/div[7]/div/button")).click();
+	}
+
+
+}*/
